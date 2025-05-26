@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com links</title>
+</head>
+<body>
+    <h1>Usando links externos</h1>
+    <p>Você pode acessar o site do <a href="https://www.youtube.com/" target="_blank" rel="external">Youtube</a></p>
+    <!--Acima podemos ver como colocar um link com a tag A e usando a tag TARGET="_BLANK" e REL="EXTERNAL" para abrir o link em uma nova guia-->
+    <h2>Usando links internos</h2>
+    <p>Está é a primeira página do site, se você quiser pode acessar a minha <a href="pag002.html" rel="next">segunda página</a></p>
+    <!--Na criação de link interno como navegação da pagina basta referenciar com a tag A e apertar Crtl+ESPAÇO que ele dirá os links internos disponivéis.-->
+    <!--Coloque a tag rel="next" para referenciar que é a próxima pagina e coloque a tag rel="prev" para referenciar que é a pagina anterior.-->
+    <p>Você pode acessar nossa <a href="Noticias/pag003.html" rel="next">página de notícias</a></p>
+    <!--Para voltar a página que está fora da pasta no comando A do link antes tem que colocar o comando ../ que volta uma pasta para poder selecionar a página desejada-->
+    <h1>Links para Donwload</h1>
+    <ul>
+        <li><a href="livro/Wellyton Duarte da Rosa.pdf" download="Wellyton Duarte da Rosa" type="application/pdf">Baixar livro dem PDF</a></li>
+        <li><a href="livro/Wellyton Duarte da Rosa.rar" download="Wellyton Duarte da Rosa" type="application/zip">Baixar arquivo em ZIP</a></li>
+    </ul>
+    <!--Vamos usar de exemplo a criação de uma lista onde tenha os arquivos a serem baixados, usando a tag ul uma lista não ordenada, usando o tag li e a tag a para criar um link dentro dele vou referenciar os arquivo e usar a tag download colocando o nome do arquivo e a tag type para colocar o tipo de arquivo a ser baixado. -->
+</body>
+</html>
