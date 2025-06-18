@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilha de Componentes de Hardware</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinhar ao topo em vez de centralizar verticalmente */
+            min-height: 100vh;
+            padding: 20px;
+        }
+        table {
+            width: 100%; /* Tornar a tabela fluida dentro do seu contêiner */
+            max-width: 1200px; /* Largura máxima para telas maiores */
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* arredondado-xl */
+        }
+        th, td {
+            border: 1px solid #e5e7eb; /* cinza-200 */
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #1f2937; /* cinza-800 */
+            color: #ffffff;
+            font-weight: 600; /* semi-negrito */
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb; /* cinza-50 */
+        }
+        tr:hover {
+            background-color: #e0f2fe; /* azul claro para hover */
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #e5e7eb;
+                border-radius: 0.75rem;
+                overflow: hidden;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #e5e7eb;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+            td:before {
+                position: absolute;
+                top: 0;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap; /* Manter o "label" do td em uma linha */
+                text-align: left;
+                font-weight: bold;
+                content: attr(data-label);
+            }
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 lg:p-8">
+    <div class="w-full max-w-screen-xl mx-auto rounded-xl shadow-lg">
+        <table class="min-w-full divide-y divide-gray-200 rounded-xl">
+            <thead class="bg-gray-800 text-white rounded-t-xl">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tl-xl">Memória RAM</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Placa Mãe</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">HD ou SSD</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Nome</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Modelo do HD/SSD</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Processador</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tr-xl">IP</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">2GB (2X1GB)</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">946GM-DS2</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">SSD</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">sda</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">ADATA SU650 111,8G</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">Intel(R) Celeron(R) CPU 430  @ 1.80GHz</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">192.168.7.35</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">192.168.7.100</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">192.168.7.99</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">2GB</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">G31M-S2C</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">HDD</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">sda</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">WDC WD1600AAJS-00L7A0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">192.168.7.30</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+                <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Memória RAM">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Placa Mãe">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="HD ou SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Nome">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Modelo do HD/SSD">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="Processador">0</td>
+                    <td class="px-6 py-4 text-sm text-gray-900" data-label="IP">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
